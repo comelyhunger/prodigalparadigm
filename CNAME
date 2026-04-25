@@ -1,0 +1,5 @@
+cd ~/Desktop/prodigalparadigm
+echo "www.prodigalparadigm.com" > CNAME
+git add CNAME
+git commit -m "add custom domain"
+git push
