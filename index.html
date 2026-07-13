@@ -14,6 +14,7 @@
             --green-dark: #0f2419;
             --gold: #c49a3c;
             --gold-light: #d4ad5a;
+            --gold-deep: #8a661b;   /* text-safe gold on cream — 4.7:1 contrast */
             --cream: #f5f2eb;
             --cream-dark: #e8e3d9;
             --text: #2a2a2a;
@@ -108,7 +109,7 @@
 
         .tagline em {
             font-style: italic;
-            color: var(--gold);
+            color: var(--gold-deep);
         }
 
         .sub-tagline {
@@ -141,6 +142,30 @@
             letter-spacing: 0.05em;
             opacity: 0;
             animation: fadeIn 1s ease 1.3s forwards;
+        }
+
+        .top-contact {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--green-mid);
+            text-decoration: none;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+            z-index: 2;
+        }
+
+        .top-contact:hover {
+            color: var(--gold-deep);
+            border-bottom-color: var(--gold-deep);
         }
 
         /* ── Divider ── */
@@ -198,6 +223,12 @@
         .work-card:hover {
             border-color: var(--gold);
             transform: translateY(-2px);
+        }
+
+        a.work-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         .work-card h3 {
@@ -263,7 +294,7 @@
 
         footer p {
             font-size: 0.75rem;
-            color: rgba(245, 242, 235, 0.4);
+            color: rgba(245, 242, 235, 0.65);
             letter-spacing: 0.05em;
         }
 
@@ -292,6 +323,7 @@
 <body>
 
     <section class="hero">
+        <a href="mailto:kathleen@prodigalparadigm.com" class="top-contact">Get in Touch</a>
         <div class="logo-mark">
             <div class="logo-cell"></div>
             <div class="logo-cell"></div>
@@ -323,18 +355,18 @@
     <section class="section">
         <h2 class="section-heading">Recent Work</h2>
         <div class="work-grid">
-            <div class="work-card">
+            <a class="work-card" href="https://www.linkedin.com/pulse/human-fred-vs-llm-kathleen-bartin-wibhe/" target="_blank" rel="noopener">
                 <h3>Human Fred vs. LLM Fred</h3>
                 <p>A paper on why AI agents drift, fabricate, and forget — and what to do about it. Published April 2026.</p>
-            </div>
+            </a>
             <div class="work-card">
                 <h3>Equal Playing Fields</h3>
                 <p>Nine-month longitudinal cognition study submitted to Google DeepMind's Kaggle competition. Six measurement streams. Judging in progress.</p>
             </div>
-            <div class="work-card">
+            <a class="work-card" href="https://github.com/comelyhunger/RAVEN" target="_blank" rel="noopener">
                 <h3>RAVEN</h3>
                 <p>An autonomous discovery agent for antique jewelry. Open source on GitHub. Built entirely through human-AI collaboration.</p>
-            </div>
+            </a>
             <div class="work-card">
                 <h3>Coffee with Claude</h3>
                 <p>A community AI literacy program at Millbrook Library. Launching June 2026. Making AI accessible to everyone, not just engineers.</p>
