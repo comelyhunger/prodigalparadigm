@@ -254,6 +254,72 @@
             margin-bottom: 0;
         }
 
+        /* ── Featured Tool ── */
+        a.featured-tool {
+            display: block;
+            background: white;
+            border: 1px solid var(--gold);
+            padding: 2rem 2.2rem;
+            margin: 2rem 0 0.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        a.featured-tool:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(196, 154, 60, 0.18);
+        }
+
+        .featured-tool .tool-overline {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+            margin-bottom: 0.6rem;
+        }
+
+        .featured-tool .tool-overline::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 0.55rem;
+        }
+
+        .featured-tool h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--green-deep);
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-tool p.tool-desc {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 0.9rem;
+        }
+
+        .featured-tool .tool-cta {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--green-mid);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+
+        a.featured-tool:hover .tool-cta {
+            color: var(--gold-deep);
+        }
+
         /* ── CTA ── */
         .cta-section {
             background: var(--green-deep);
@@ -362,6 +428,12 @@
 
     <section class="section">
         <h2 class="section-heading">Recent Work</h2>
+        <a class="featured-tool" href="https://claude.ai/code/artifact/50192371-d7e7-48ac-8a98-71e4e5238dbc" target="_blank" rel="noopener">
+            <p class="tool-overline">Live Tool &middot; Fieldwork</p>
+            <h3>The Recruiter's Field Kit</h3>
+            <p class="tool-desc">Most AI-era reqs are more than one job. Decode the req, get the searches, score the person — in whatever AI assistant you already use. Free account is fine. Nothing to install.</p>
+            <span class="tool-cta">Open the kit &rarr;</span>
+        </a>
         <div class="work-grid">
             <a href="the-first-framework-that-thinks.html" class="work-card">
                 <h3>The First Framework That Thinks</h3>
