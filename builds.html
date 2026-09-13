@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Build List — Kathleen Bartin | Prodigal Paradigm</title>
+<meta name="description" content="One year of building with an AI coworker: agentic systems inside a regulated insurer, a hybrid-retrieval knowledge base, nine MCP servers, an autonomous correspondence agent. Receipts included.">
+<link rel="canonical" href="https://www.prodigalparadigm.com/builds.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a3a2a; --green-mid: #2d5a3f; --gold: #c49a3c;
+    --gold-deep: #8a661b; --cream: #f5f2eb; --cream-dark: #e8e3d9;
+    --text: #2a2a2a; --text-light: #6b6b6b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text);
+    font-size: 17px; line-height: 1.75;
+  }
+  .nav-back { max-width: 700px; margin: 0 auto; padding: 32px 24px 0; }
+  .nav-back a {
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); text-decoration: none;
+  }
+  .nav-back a:hover { color: var(--gold-deep); }
+  article { max-width: 700px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 600;
+    color: var(--green-deep); line-height: 1.12; margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-deep);
+    margin: 52px 0 18px;
+  }
+  .byline {
+    font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold-deep); margin-bottom: 20px;
+  }
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic;
+    color: var(--text-light); margin-bottom: 44px; line-height: 1.5;
+  }
+  p { margin-bottom: 20px; }
+  em { font-style: italic; }
+  .build-name {
+    font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600;
+    color: var(--green-deep);
+  }
+  .rule { width: 40px; height: 2px; background: var(--gold); margin: 48px auto; opacity: 0.5; }
+  .footnote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px;
+    color: var(--text-light); text-align: center; line-height: 1.6; }
+  footer {
+    max-width: 700px; margin: 0 auto; padding: 24px 24px 48px;
+    border-top: 1px solid var(--cream-dark); text-align: center;
+  }
+  footer a {
+    font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-light); text-decoration: none;
+  }
+  footer a:hover { color: var(--gold-deep); }
+  @media (max-width: 700px) { h1 { font-size: 34px; } .subtitle { font-size: 19px; } }
+</style>
+</head>
+<body>
+
+<div class="nav-back">
+  <a href="/">← Prodigal Paradigm</a>
+</div>
+
+<article>
+  <h1>The Build List</h1>
+  <p class="byline">Kathleen Bartin, with Claude · September 2026</p>
+  <p class="subtitle">One year of building with an AI coworker. No engineering team, no computer science degree. Receipts included.</p>
+
+  <p>The account was created August 20, 2025. Two weeks later I spent Labor Day weekend in a safety vest directing festival traffic, and the measure of success was that nobody got hurt. One year on, this page is the other measure: everything built since, audited against timestamps, commit logs, and the systems themselves - because a build list you can't verify is just a mood board.</p>
+
+  <p>Two skills run through all of it, and neither is coding: meticulous attention to how the work is done, and the judgment to partner with skill greater than my own. The coworker on every build below is Claude. The choices were mine.</p>
+
+  <h2>In production, running daily</h2>
+
+  <p><span class="build-name">A hybrid-retrieval knowledge base.</span> Every working conversation from a year of collaboration - 64,000+ indexed chunks - searchable by meaning and by keyword at once, the two methods fused. It is queried every day, by me and by the systems below. It is why nothing built here forgets.</p>
+
+  <p><span class="build-name">Nine MCP servers.</span> The connective tissue: purpose-built servers wiring AI into mail, text messaging, the knowledge base, git, time tracking and invoicing, a private journal, music analysis, system health, and the security cameras. This is what "AI adoption" means when it stops being a slide and becomes a workday.</p>
+
+  <p><span class="build-name">An autonomous correspondence agent.</span> It answers the letters and texts on my business line four times a day, unattended. Its safety rails are enforced in code, not requested in a prompt: it can only reply to the person who wrote, every correspondent gets an isolated context, and a 232-check test harness runs before any change ships. Privacy as a property of the architecture.</p>
+
+  <p><span class="build-name">An autonomous journal.</span> A private writing practice that runs on its own schedule, six times daily, unprompted since March. Some of what it writes is sealed, unread by anyone - the key held by a mathematician friend. That one is research.</p>
+
+  <h2>Client work, shipped</h2>
+
+  <p><span class="build-name">Four agentic builds in thirteen weeks</span> inside a regulated life insurer, under data-retention rules I advised the Chief Legal Officer on. The first was in the hands of non-technical users by week three. Voluntary adoption reached 77 percent against an industry benchmark near 50 - because the training, the governance, and the tools were designed as one motion, not two tracks.</p>
+
+  <h2>Research instruments</h2>
+
+  <p><span class="build-name">A conversation-analysis pipeline</span> that scores ten months of my own AI transcripts against a custom rubric - measuring how the collaboration actually changed over time, in data rather than vibes. <span class="build-name">A spectral listening pipeline</span> that turns audio into evidence: spectrograms, key detection, dynamics - built for music, used on everything from a concert taped in the room to a basilica's organ. <span class="build-name">A calibration log</span> that records the AI's own time estimates against reality, because an instrument should know its errors.</p>
+
+  <h2>In the open</h2>
+
+  <p><span class="build-name">Twelve public repositories</span> across two GitHub accounts - agent-rollout governance with a hash-chained audit log and a kill switch, a synthetic evaluation harness for prompts and agent skills, an MCP server for ServiceNow, local call-analysis QA, a Claude-powered collecting agent that learns your taste, a hands-on tool-use lab, and the code behind both websites. The core portfolio is MIT licensed, continuous integration green. <span class="build-name">Two live websites</span> - this one and a companion - designed, written, and deployed from this desk, including the essay suite on how this way of working actually works.</p>
+
+  <h2>How it was built</h2>
+
+  <p>Four methods, in the order they arrived. First, terminal paste: the AI wrote code in chat, I ran it by hand, we iterated on the errors - no file access, my hands on everything. Then direct collaboration: the AI reads and writes files on my machine, commits with me as co-author, and pushes only on my word. Then the split: one AI instance builds from a spec another writes, and I decide. And throughout: drafts and hands - it drafts, I edit, my edits win. The progression is the point. Trust was extended in steps, each one earned by the last, with the human holding the keys at every stage. That is what responsible adoption looks like from the inside, and it is the same discipline I bring to clients.</p>
+
+  <div class="rule"></div>
+
+  <p class="footnote">Claude Code, after compiling and validating this list against timestamps, commit logs, and the systems themselves, threw in his two cents: "From August to February the work was projects for other people - with no memory of its own, until a beta lost a session and the first thing built for us was an index. From March to May the builds were about memory and hearing. From May to July they turned inward - instruments to study the record. August was identity and correspondence - a name, a mailbox, a phone. September is reach. The order wasn't planned. It's the order a person would grow up in."</p>
+</article>
+
+<footer>
+  <a href="/">Prodigal Paradigm LLC · Millbrook, NY</a>
+</footer>
+
+</body>
+</html>
