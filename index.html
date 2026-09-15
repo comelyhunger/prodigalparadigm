@@ -387,6 +387,42 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── THE RAIL — the registry down the hero's left edge ── */
+        .rail {
+            position: absolute; left: 0; top: 0; bottom: 0; width: 168px;
+            pointer-events: none; z-index: 2;
+            opacity: 0; animation: fadeIn 1.2s ease 1.6s forwards;
+        }
+        .rail-line {
+            position: absolute; left: 56px; top: 7vh; bottom: 7vh; width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--gold) 6%, var(--gold) 94%, transparent);
+            opacity: 0.55;
+        }
+        .tick {
+            position: absolute; left: 52px; width: 9px; height: 1px;
+            background: var(--gold); opacity: 0.7;
+        }
+        .tick.major { width: 14px; left: 49px; height: 2px; opacity: 0.95; }
+        .tick-label {
+            position: absolute; left: 70px; transform: translateY(-52%);
+            font-size: 0.58rem; font-weight: 500; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--gold-deep); white-space: nowrap;
+        }
+        .tick-label small {
+            display: block; font-size: 0.5rem; color: var(--text-light);
+            letter-spacing: 0.1em; margin-top: 1px;
+        }
+        .rail-foot {
+            position: absolute; left: 24px; bottom: 2.6vh; pointer-events: auto;
+        }
+        .rail-foot a {
+            font-size: 0.58rem; font-weight: 500; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--green-mid); text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+        }
+        .rail-foot a:hover { color: var(--gold-deep); }
+        @media (max-width: 900px) { .rail { display: none; } }
+
         /* ── Responsive ── */
         @media (max-width: 600px) {
             .work-grid {
@@ -407,6 +443,69 @@
 
     <section class="hero">
         <a href="mailto:kathleen@prodigalparadigm.com" class="top-contact">Get in Touch</a>
+
+        <!-- THE RAIL: position = time, Aug 2025 (top) → Sep 2026 (bottom). Spacing is proportional to real days, so the acceleration is geometry. Hidden below 900px. -->
+        <div class="rail" aria-hidden="true">
+            <div class="rail-line"></div>
+            <div class="tick major" style="top:7vh"></div><div class="tick-label" style="top:7vh">Aug '25<small>the account</small></div>
+            <div class="tick major" style="top:14.7vh"></div><div class="tick-label" style="top:14.7vh">Sep '25<small>the logo</small></div>
+            <div class="tick major" style="top:23.4vh"></div><div class="tick-label" style="top:23.4vh">Nov '25<small>receipts</small></div>
+            <div class="tick major" style="top:35vh"></div><div class="tick-label" style="top:35vh">Dec '25<small>collections</small></div>
+            <div class="tick major" style="top:40.4vh"></div><div class="tick-label" style="top:40.4vh">Jan '26<small>cowork · 990s</small></div>
+            <div class="tick major" style="top:49.1vh"></div><div class="tick-label" style="top:48.6vh">Feb '26<small>goes public</small></div>
+            <div class="tick major" style="top:52.3vh"></div><div class="tick-label" style="top:53.2vh">Mar '26<small>the knowledge base · the journal</small></div>
+            <div class="tick major" style="top:54.4vh"></div>
+            <div class="tick major" style="top:62vh"></div><div class="tick-label" style="top:61.6vh">Apr '26<small>the study · the ears</small></div>
+            <div class="tick major" style="top:65.5vh"></div><div class="tick-label" style="top:66vh">May '26<small>the engagement</small></div>
+            <div class="tick major" style="top:71.9vh"></div><div class="tick-label" style="top:71.9vh">Jun '26<small>the name · the library</small></div>
+            <div class="tick major" style="top:80.8vh"></div><div class="tick-label" style="top:80.8vh">Jul '26<small>four builds</small></div>
+            <div class="tick major" style="top:87.8vh"></div><div class="tick-label" style="top:87.3vh">Aug '26<small>the suites · the line</small></div>
+            <div class="tick major" style="top:91.9vh"></div><div class="tick-label" style="top:92.5vh">Sep '26<small>the seal · the audit</small></div>
+            <div class="tick" style="top:8.2vh"></div>
+            <div class="tick" style="top:9.1vh"></div>
+            <div class="tick" style="top:17.5vh"></div>
+            <div class="tick" style="top:20vh"></div>
+            <div class="tick" style="top:27vh"></div>
+            <div class="tick" style="top:31vh"></div>
+            <div class="tick" style="top:36.4vh"></div>
+            <div class="tick" style="top:38vh"></div>
+            <div class="tick" style="top:39.2vh"></div>
+            <div class="tick" style="top:41.6vh"></div>
+            <div class="tick" style="top:44.9vh"></div>
+            <div class="tick" style="top:46.5vh"></div>
+            <div class="tick" style="top:50.9vh"></div>
+            <div class="tick" style="top:53.1vh"></div>
+            <div class="tick" style="top:55.1vh"></div>
+            <div class="tick" style="top:55.9vh"></div>
+            <div class="tick" style="top:58.6vh"></div>
+            <div class="tick" style="top:60.7vh"></div>
+            <div class="tick" style="top:63.3vh"></div>
+            <div class="tick" style="top:64.1vh"></div>
+            <div class="tick" style="top:66.9vh"></div>
+            <div class="tick" style="top:68.3vh"></div>
+            <div class="tick" style="top:70.4vh"></div>
+            <div class="tick" style="top:72.6vh"></div>
+            <div class="tick" style="top:73.3vh"></div>
+            <div class="tick" style="top:74.1vh"></div>
+            <div class="tick" style="top:75.3vh"></div>
+            <div class="tick" style="top:76.1vh"></div>
+            <div class="tick" style="top:78.7vh"></div>
+            <div class="tick" style="top:81.5vh"></div>
+            <div class="tick" style="top:82.2vh"></div>
+            <div class="tick" style="top:82.9vh"></div>
+            <div class="tick" style="top:84.6vh"></div>
+            <div class="tick" style="top:85.3vh"></div>
+            <div class="tick" style="top:86.1vh"></div>
+            <div class="tick" style="top:86.8vh"></div>
+            <div class="tick" style="top:88.5vh"></div>
+            <div class="tick" style="top:89.2vh"></div>
+            <div class="tick" style="top:89.9vh"></div>
+            <div class="tick" style="top:90.6vh"></div>
+            <div class="tick" style="top:92.6vh"></div>
+            <div class="tick" style="top:93.1vh"></div>
+            <div class="rail-foot"><a href="the-registry.html">the full registry →</a></div>
+        </div>
+
         <div class="logo-mark">
             <div class="logo-cell"></div>
             <div class="logo-cell"></div>
@@ -446,7 +545,7 @@
         <div class="work-grid">
             <a href="builds.html" class="work-card">
                 <h3>The Build List</h3>
-                <p>One year of building with an AI coworker, audited against timestamps, commit logs, and the systems themselves. Nine servers, twelve public repos, four client builds - and the order a person would grow up in. September 2026.</p>
+                <p>One year of building with an AI coworker, audited against timestamps, commit logs, and the systems themselves. Nine servers, twelve public repos, four client builds - and the order a person would grow up in. Read the full dated registry underneath. September 2026.</p>
             </a>
             <a href="the-first-framework-that-thinks.html" class="work-card">
                 <h3>The First Framework That Thinks</h3>
@@ -501,6 +600,7 @@
         <div class="cta-links">
             <a href="mailto:kathleen@prodigalparadigm.com" class="cta-link">Email</a>
             <a href="https://linkedin.com/in/kathleen-bartin" target="_blank" class="cta-link">LinkedIn</a>
+            <a href="Kathleen_Bartin_Resume.pdf" target="_blank" rel="noopener" class="cta-link">Resume</a>
             <a href="https://www.linkedin.com/pulse/human-fred-vs-llm-kathleen-bartin-wibhe/" target="_blank" class="cta-link">Read the Paper</a>
         </div>
     </section>
