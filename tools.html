@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tool Shelf | Prodigal Paradigm</title>
+    <meta name="description" content="Four free, live AI tools by Kathleen Bartin: The Supersuit Check, Coffee with Claude in a Box, Answerable, and the Recruiter's Field Kit. No signup, nothing you type leaves the page.">
+
+    <meta property="og:title" content="The Tool Shelf | Prodigal Paradigm">
+    <meta property="og:description" content="Free, live tools built inside Claude. A self-check for how you work with AI, a first lesson for beginners, an AEO page audit, and a recruiter's decoder. No signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.prodigalparadigm.com/tools.html">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "The Tool Shelf",
+      "description": "Free, live AI tools by Kathleen Bartin of Prodigal Paradigm LLC. Each runs entirely in the browser: no signup, no data collected.",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "position": 1,
+          "name": "The Supersuit Check",
+          "url": "https://claude.ai/artifact/MhMLXaJHYtTaevcNRemquX",
+          "applicationCategory": "Self-assessment",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Eight questions about how you actually work with your AI. A verdict, a six-dimension readout, and one prescription with a starter prompt. Companion to the essay The First Framework That Thinks.",
+          "author": { "@id": "https://www.prodigalparadigm.com/#kathleen" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 2,
+          "name": "Coffee with Claude in a Box",
+          "url": "https://claude.ai/artifact/2i6BFMna7STwsS4nVxNeJz",
+          "applicationCategory": "AI literacy lesson",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Lesson one of the Millbrook Library AI class, packaged to travel: a guided first conversation for someone who has never used an AI. No account needed.",
+          "author": { "@id": "https://www.prodigalparadigm.com/#kathleen" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 3,
+          "name": "Answerable",
+          "url": "https://claude.ai/artifact/U6TxUKrX6bpmHbCs5kqUSb",
+          "applicationCategory": "AEO page audit",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Answer engines are reading your website. Answerable scores a public page across ten dimensions and reports what a machine can and cannot answer about you.",
+          "author": { "@id": "https://www.prodigalparadigm.com/#kathleen" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "position": 4,
+          "name": "The Recruiter's Field Kit",
+          "url": "https://claude.ai/code/artifact/50192371-d7e7-48ac-8a98-71e4e5238dbc",
+          "applicationCategory": "Recruiting decoder",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Most AI-era reqs are more than one job. Decode the req, get the searches, score the person, in whatever AI assistant a recruiter already uses.",
+          "author": { "@id": "https://www.prodigalparadigm.com/#kathleen" }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-deep: #1a3a2a;
+            --green-mid: #2d5a3f;
+            --green-dark: #0f2419;
+            --gold: #c49a3c;
+            --gold-light: #d4ad5a;
+            --gold-deep: #8a661b;
+            --cream: #f5f2eb;
+            --cream-dark: #e8e3d9;
+            --text: #2a2a2a;
+            --text-light: #6b6b6b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+        }
+        .top-bar {
+            padding: 1.5rem 2rem;
+        }
+        .top-bar a {
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--green-mid);
+            text-decoration: none; border-bottom: 1px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .top-bar a:hover { color: var(--gold-deep); border-bottom-color: var(--gold-deep); }
+        .page-head {
+            max-width: 720px; margin: 0 auto; padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+        .page-head h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 400; color: var(--green-deep); margin-bottom: 1rem;
+        }
+        .page-head h1 em { font-style: italic; color: var(--gold-deep); }
+        .page-head p.intro {
+            font-size: 1rem; line-height: 1.8; color: var(--text);
+            text-align: left; margin: 1.4rem auto 0;
+        }
+        .head-divider {
+            width: 40px; height: 1px; background: var(--gold); margin: 2rem auto 0;
+        }
+        .shelf {
+            max-width: 720px; margin: 0 auto; padding: 2rem 2rem 4rem;
+            display: flex; flex-direction: column; gap: 1.5rem;
+        }
+        a.tool {
+            display: block; background: white; border: 1px solid var(--gold);
+            padding: 2rem 2.2rem; text-decoration: none; color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        a.tool:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(196, 154, 60, 0.18);
+        }
+        a.tool:focus { outline: none; }
+        a.tool:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 3px; }
+        .tool-overline {
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--gold-deep); margin-bottom: 0.6rem;
+        }
+        .tool-overline::before {
+            content: ''; display: inline-block; width: 8px; height: 8px;
+            border-radius: 50%; background: var(--gold); margin-right: 0.55rem;
+        }
+        .tool h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem; font-weight: 600; color: var(--green-deep);
+            margin-bottom: 0.5rem;
+        }
+        .tool p.tool-desc {
+            font-size: 0.92rem; line-height: 1.7; color: var(--text-light);
+            margin-bottom: 0.9rem;
+        }
+        .tool .tool-cta {
+            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--green-mid);
+            border-bottom: 1px solid var(--gold); padding-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+        a.tool:hover .tool-cta { color: var(--gold-deep); }
+        .shelf-note {
+            max-width: 720px; margin: 0 auto; padding: 0 2rem 4rem;
+            font-size: 0.88rem; color: var(--text-light); line-height: 1.7;
+        }
+        .shelf-note a { color: var(--gold-deep); }
+        footer {
+            background: var(--green-dark); padding: 2rem; text-align: center;
+        }
+        footer p {
+            font-size: 0.75rem; color: rgba(245, 242, 235, 0.65); letter-spacing: 0.05em;
+        }
+        @media (max-width: 600px) {
+            .page-head { padding: 2rem 1.5rem 0.5rem; }
+            .shelf { padding: 1.5rem 1.5rem 3rem; }
+            a.tool { padding: 1.6rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar"><a href="index.html">&larr; Prodigal Paradigm</a></div>
+
+    <header class="page-head">
+        <h1>The Tool Shelf<br><em>free, live, and honest</em></h1>
+        <p class="intro">Four working tools, each built inside Claude and given away. They share three rules: no signup, no data collected — nothing you type or tap leaves the page — and each one is a lesson wearing an app's clothes. They're built on a standing bet: that ordinary hands, given the right tool, can do expert work. So far the bet keeps paying.</p>
+        <div class="head-divider"></div>
+    </header>
+
+    <main class="shelf">
+
+        <a class="tool" href="https://claude.ai/artifact/MhMLXaJHYtTaevcNRemquX" target="_blank" rel="noopener">
+            <p class="tool-overline">Live Tool &middot; Self-Check</p>
+            <h2>The Supersuit Check</h2>
+            <p class="tool-desc">Eight questions about how you actually work with your AI — two minutes, two taps each. You get a verdict (on the hanger, one sleeve on, or in the seat), a readout across six dimensions, and one prescription: the single enhancement to put on this week, starter prompt included. Companion to the essay The First Framework That Thinks.</p>
+            <span class="tool-cta">Take the check &rarr;</span>
+        </a>
+
+        <a class="tool" href="https://claude.ai/artifact/2i6BFMna7STwsS4nVxNeJz" target="_blank" rel="noopener">
+            <p class="tool-overline">Live Tool &middot; AI Literacy</p>
+            <h2>Coffee with Claude in a Box</h2>
+            <p class="tool-desc">Lesson one of my Millbrook Library class, packaged to travel: say hello properly. A guided first conversation for someone who has never used an AI — patient by design, works on a phone, no account needed. Made to be handed across a table to a neighbor.</p>
+            <span class="tool-cta">Open lesson one &rarr;</span>
+        </a>
+
+        <a class="tool" href="https://claude.ai/artifact/U6TxUKrX6bpmHbCs5kqUSb" target="_blank" rel="noopener">
+            <p class="tool-overline">Live Tool &middot; AEO Audit</p>
+            <h2>Answerable</h2>
+            <p class="tool-desc">Answer engines are already reading your website and deciding what to say about you. Answerable scores any public page across ten dimensions — the same rubric I use in practice — and reports what a machine can and can't answer about your business. Paste a page, get the audit.</p>
+            <span class="tool-cta">Audit a page &rarr;</span>
+        </a>
+
+        <a class="tool" href="https://claude.ai/code/artifact/50192371-d7e7-48ac-8a98-71e4e5238dbc" target="_blank" rel="noopener">
+            <p class="tool-overline">Live Tool &middot; Fieldwork</p>
+            <h2>The Recruiter's Field Kit</h2>
+            <p class="tool-desc">Most AI-era reqs are more than one job. Decode the req, get the searches, score the person — in whatever AI assistant you already use. Free account is fine. Nothing to install.</p>
+            <span class="tool-cta">Open the kit &rarr;</span>
+        </a>
+
+    </main>
+
+    <p class="shelf-note">These tools are how the practice thinks in public. If you'd like the version built for your team — your rubric, your workflow, your governance — <a href="mailto:kathleen@prodigalparadigm.com">that's the day job</a>.</p>
+
+    <footer>
+        <p>Prodigal Paradigm LLC &bull; Millbrook, NY &bull; 2026</p>
+    </footer>
+
+</body>
+</html>

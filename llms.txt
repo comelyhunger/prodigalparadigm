@@ -14,6 +14,7 @@ Kathleen is a 30-year technology-adoption practitioner who spent the last year b
 
 ## Key pages
 
+- [The Tool Shelf](https://www.prodigalparadigm.com/tools.html): Four free, live tools built inside Claude — The Supersuit Check (a self-assessment of how a person works with their AI), Coffee with Claude in a Box (a first lesson for AI beginners), Answerable (an AEO audit that scores any public page), and the Recruiter's Field Kit (a req decoder for recruiters). No signup; nothing typed into them leaves the page.
 - [The Registry](https://www.prodigalparadigm.com/the-registry.html): The full dated build log — every technical first from account creation forward, audited against timestamps. Read the dates alone to see the acceleration.
 - [The Build List](https://www.prodigalparadigm.com/builds.html): Narrative walkthrough of the year's builds, with the dated registry beneath it.
 - [Fieldwork](https://www.prodigalparadigm.com/fieldwork.html): Field notes on AI adoption in practice.
