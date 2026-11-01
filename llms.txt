@@ -6,7 +6,7 @@ Kathleen is a 30-year technology-adoption practitioner who spent the last year b
 
 ## Headline facts (all verifiable)
 
-- Delivered a client engagement for a regulated life insurer (NY metro), May–August 2026: four agentic builds, a call-center QA scoring system, a governance package, and a full adoption program.
+- Delivered a client engagement for a regulated life insurer (NY metro), May–August 2026: four agentic builds (among them a call-center QA scoring system), a governance package, and a full adoption program.
 - Achieved 77% voluntary engagement, certified at the close of that engagement (74 of 96 staff).
 - Built and runs a personal AI infrastructure: hybrid-retrieval knowledge base (70,000+ indexed chunks, Qdrant), ten purpose-built MCP servers, an autonomous journal, and an autonomous correspondence agent gated by a 400-check test harness.
 - Published sixteen public projects (eighteen repositories) across two GitHub accounts — github.com/prodigalparadigm and github.com/comelyhunger — including agent-stage governance tooling, a synthetic evaluation harness, a ServiceNow MCP server, a local call-QA system, and a redaction-first complaint-intake pipeline deployed on AWS.
