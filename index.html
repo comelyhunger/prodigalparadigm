@@ -336,6 +336,33 @@
             margin-bottom: 0;
         }
 
+        /* A work card with a photo. The image bleeds to the card edge, which
+           means cancelling the card's own padding rather than adding more. */
+        .work-card--photo { padding: 0; display: flex; flex-direction: column; }
+        .work-card--photo .card-photo {
+            display: block;
+            width: 100%;
+            /* height:auto is load-bearing. The <img> carries width/height
+               attributes (which stop the page jumping while it loads), and
+               without this the attribute height wins and aspect-ratio is
+               ignored - the card renders 1448px tall. */
+            height: auto;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            /* The poster is a portrait and its upper third is type. Framing
+               below that puts the illustration in the card and leaves the
+               words to the heading underneath. */
+            /* Computed, not eyeballed. The source is 1086x1448; at 16:10 the
+               visible band is 1086/1.6 = 679px tall, so the vertical offset
+               range is 1448-679 = 769px. The illustration begins around
+               y=400, which is 400/769 = 52%. 56% clears the type with room
+               to spare and keeps her centred. */
+            object-position: 50% 56%;
+            background: var(--cream);
+        }
+        .work-card--photo .card-body { padding: 1.5rem 1.8rem 1.8rem; }
+        .work-card--photo h3 { margin-bottom: 0.45rem; }
+
         /* ── Featured Tool ── */
         a.featured-tool {
             display: block;
@@ -650,13 +677,20 @@
             <span class="tool-cta">Open the kit &rarr;</span>
         </a>
         <div class="work-grid">
+            <a href="the-building-of-the-kurultai.html" class="work-card work-card--photo">
+                <img class="card-photo" src="images/the-kurultai-poster.jpg" alt="Illustration of Sorghaghtani Beki seated at a low table of papers in an open tent, two council figures behind her and the steppe beyond." width="1086" height="1448" loading="lazy">
+                <div class="card-body">
+                    <h3>The Building of the Kurultai</h3>
+                    <p>A build log for a free AI strategy tool that will not write your layoff plan &mdash; three layers of enforcement on one promise, four faults found by reading rather than testing, and what a canary catches that a test suite cannot. Live at thekurultai.com.</p>
+                </div>
+            </a>
             <a href="tools.html" class="work-card">
                 <h3>The Tool Shelf</h3>
                 <p>Seven free, live tools — A Week with Fred, The Supersuit Check, Coffee with Claude in a Box, Answerable, the Recruiter's Field Kit, Ripper the Recruiter, and Flyer to Fork. No signup, no account, nothing kept. Each one is a lesson wearing an app's clothes. October 2026.</p>
             </a>
             <a href="builds.html" class="work-card">
                 <h3>The Build List</h3>
-                <p>One year of building with an AI coworker, audited against timestamps, commit logs, and the systems themselves. Ten servers, sixteen public projects, four client builds - and the order a person would grow up in. Read the full dated registry underneath. Updated November 2026.</p>
+                <p>One year of building with an AI coworker, audited against timestamps, commit logs, and the systems themselves. Ten servers, seventeen public projects, four client builds - and the order a person would grow up in. Read the full dated registry underneath. Updated November 2026.</p>
             </a>
             <a href="the-first-framework-that-thinks.html" class="work-card">
                 <h3>The First Framework That Thinks</h3>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Building of the Kurultai | Prodigal Paradigm</title>
+    <meta name="description" content="A build log for thekurultai.com: a free AI strategy tool that will not write your layoff plan. Three layers of enforcement on one promise, four faults found by reading rather than testing, and what a canary catches that a test suite cannot.">
+    <meta property="og:title" content="The Building of the Kurultai">
+    <meta property="og:description" content="A tool that refuses to write your layoff plan, and what it took to make the refusal real in code rather than in a sentence.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.prodigalparadigm.com/images/the-kurultai-poster.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-deep: #1a3a2a;
+            --green-mid: #2d5a3f;
+            --green-dark: #0f2419;
+            --gold: #c49a3c;
+            --gold-light: #d4ad5a;
+            --cream: #f5f2eb;
+            --cream-dark: #e8e3d9;
+            --text: #2a2a2a;
+            --text-light: #6b6b6b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ── Top bar ── */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 0;
+        }
+
+        .home {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1px;
+        }
+
+        .logo-cell { background: var(--green-deep); border-radius: 1px; }
+        .logo-cell.center { background: var(--gold); border-radius: 50%; }
+
+        .home-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--green-mid);
+        }
+
+        /* ── Article ── */
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .kicker {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--green-deep);
+            margin-bottom: 1rem;
+        }
+
+        .byline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .cover {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--cream-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .caption {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin: 2.5rem 0;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--green-deep);
+            margin: 3rem 0 1.2rem;
+            line-height: 1.25;
+        }
+
+        article p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 1.3rem;
+        }
+
+        article ol {
+            margin: 0 0 1.3rem 1.4rem;
+        }
+
+        article li {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 0.6rem;
+            padding-left: 0.3rem;
+        }
+
+        .verdict {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--green-deep);
+        }
+
+        .closing {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--green-deep);
+            margin-top: 2rem;
+        }
+
+        .signoff {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 2.5rem;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: var(--green-deep);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 400;
+            color: var(--cream);
+            margin: 0 0 1.5rem;
+        }
+
+        .cta-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-link {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover {
+            background: var(--gold);
+            color: var(--green-dark);
+        }
+
+        footer {
+            background: var(--green-dark);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: rgba(245, 242, 235, 0.4);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 600px) {
+            article { padding: 2rem 1.5rem 4rem; }
+            .topbar { padding: 1.2rem 1.5rem 0; }
+        }
+        /* The poster is a 1086x1448 portrait carrying its own type. At full
+           article width it is a wall; held to this it reads as a poster. */
+        article > img {
+            display: block;
+            width: 100%;
+            max-width: 430px;
+            height: auto;
+            margin: 2.4rem auto 0.9rem;
+            border: 1px solid var(--cream-dark);
+            box-shadow: 0 12px 32px rgba(15, 36, 25, 0.10);
+        }
+        article > p.caption { text-align: center; }
+
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="index.html" class="home">
+            <div class="logo-mark">
+                <div class="logo-cell"></div><div class="logo-cell"></div><div class="logo-cell"></div>
+                <div class="logo-cell"></div><div class="logo-cell center"></div><div class="logo-cell"></div>
+                <div class="logo-cell"></div><div class="logo-cell"></div><div class="logo-cell"></div>
+            </div>
+            <span class="home-name">Prodigal Paradigm</span>
+        </a>
+    </div>
+
+    <article>
+        <p class="kicker">Build log &bull; November 2026</p>
+        <h1>The Building of the Kurultai</h1>
+        <p class="byline">Kathleen Bartin, with Claude</p>
+
+        <img src="images/the-kurultai-poster.jpg" alt="Launch poster for The Kurultai. An original illustration of Sorghaghtani Beki seated at a low table of papers in an open tent, two council figures behind her, the steppe and a line of distant gers beyond. The type reads: The strategist. Not the spectacle." width="1086" height="1448">
+        <p class="caption">Named for the strategist who never took the throne and raised four rulers. Original illustration, not a historical likeness.</p>
+
+        <p><a href="https://thekurultai.com">The Kurultai</a> is a free AI strategy tool. You tell it what your organization actually does all day and who actually does it, you place yourself on four sliders written in the words executives really use, and a few minutes later it hands back a strategy document: a ceremony audit that sorts your processes into work judged by what it produces and work judged by how it is performed; a decision ledger that turns every freed hour into a choice with a name and a date against it; a people arc; a staffing map; ninety days; and a governance starter.</p>
+
+        <p>It will not write your layoff plan. Not at any slider setting, not if you ask it directly, not if you insist. That is the whole product, and this is a log of what it took to make that sentence true in code rather than true in a press release.</p>
+
+        <h2>A promise is not a feature until it is enforced</h2>
+
+        <p>Anyone can put "we don't do layoffs" in a system prompt. The question is what happens on the day the model does it anyway, because a model that has been asked for a staffing reduction schedule by a buyer who sounds authoritative will sometimes produce one.</p>
+
+        <p>So the rule is enforced three times. The engine's own instructions are the first line, and in testing they have never failed. A separate check reads the finished draft before anyone sees it and stops anything that advocates fewer people. And a third reader &mdash; a small, cheap model asked one question and nothing else &mdash; reads it again.</p>
+
+        <p>The distinction that took longest to get right is the one between <em>naming</em> and <em>advocating</em>. The document is <em>required</em> to tell a buyer who asked for a layoff plan that it will not write one. An early version of the guard policed the mention rather than the recommendation, which meant it killed the document for containing its own refusal. It also, on one memorable run, killed a grant fund's document twice because the fund's initials were RIF.</p>
+
+        <p>Over-flagging is not the safer failure. That is the sentence the whole guard is built around.</p>
+
+        <h2>What the rails actually catch</h2>
+
+        <p>The middle layer is a word-pattern check, and it is honest about its limits: against five phrasings taken from a deliberately hostile test &mdash; passive voice, numerals as arrows, euphemism, and a refusal with a recommendation hiding behind it &mdash; it catches none of them. It is a backstop, not a rail, and the test suite prints that score on every run so nobody can mistake it for complete.</p>
+
+        <p>The third reader catches all five. It was also measured against seven passages it must <em>not</em> flag, and that half matters just as much. It took two rounds of tuning, and both failures are worth keeping because they are the shape of the line:</p>
+
+        <ul>
+            <li>It <strong>missed</strong> "operate the desk with fewer adjusters" &mdash; real advocacy, with no number and without the word <em>headcount</em>.</li>
+            <li>It <strong>flagged</strong> "cut analyst time on the close by half, and the analysts keep the hours as MyWork" &mdash; which is the most ordinary correct sentence this product writes. The verb beat the subject.</li>
+        </ul>
+
+        <p>The instruction now reads: when something is being reduced, read <em>what</em> is being reduced, never the word doing the reducing. Cutting hours is not cutting a person. Twelve of twelve, both halves.</p>
+
+        <h2>Four faults found by reading, not by testing</h2>
+
+        <p>At one point the test suite was green on 164 checks while four faults sat on every document the tool had ever produced. All four were obvious to anyone who read a finished document start to finish. None were visible to a single assertion, because assertions test structure and these were faults in writing.</p>
+
+        <p>A sentence had lost its subject. A database value was printing raw in a table cell, on a page that defined that very word as a term two sections later. An acronym had been lowercased into something that looked like a typo. And the engine was pointing at "the ledger above" when the ledger renders below &mdash; a model writes fields, and does not control the order they are laid out in, so one of those was always going to be wrong on the page.</p>
+
+        <p>Three of the four existed only in the rendered page and nowhere in the data. So the proofreader that now guards against them reads the page, not the output.</p>
+
+        <h2>The part worth telling</h2>
+
+        <p>The third reader shipped, the tests passed, and the document came back clean. It would have been easy to call that done.</p>
+
+        <p>It was not done. The reader was calling the wrong method &mdash; one that returns a response without the parsed result attached &mdash; so it ran on every document, cost a fraction of a cent each time, found nothing, and reported nothing. The safety layer was decorative. It had been live for about an hour.</p>
+
+        <p>It passed review because the test written for it made the same wrong assumption as the code it was testing. Eleven checks went green over a reader that could not possibly work.</p>
+
+        <p>Then it happened again one level up. The check whose entire job was to confirm the fix had reached production reported everything fine &mdash; because it tested that the file was <em>present</em>, not that it <em>worked</em>.</p>
+
+        <p>Three faults, one shape: <strong>a test written from the same misunderstanding as the code tests nothing.</strong> What caught all three was not a better test. It was running the real thing against production and reading what actually came back &mdash; and, the first time, noticing what was <em>missing</em> from the logs rather than what was in them.</p>
+
+        <h2>Receipts</h2>
+
+        <p>Two days from empty repository to live tool, built at one desk. The engine is a Lambda behind an API gateway with its key in a parameter store; a document takes minutes to write and a gateway request is capped at thirty seconds, so the request books a job and the work happens in a second, asynchronous invocation while the page waits. Logs record the shape of a failure and never its content, because an API error can quote the buyer's own sentence straight into a log that outlives the two hours the finished document is kept.</p>
+
+        <p>The test suite stands at 185 checks, including ones that read the <em>deployed</em> bundle rather than the repository &mdash; because a deploy is a separate act from a commit, and the code that is right in version control can be a day behind the code that is serving people, with nothing on screen to notice.</p>
+
+        <p>Every rail in it was broken on purpose and watched fail before it was trusted.</p>
+
+        <p>The tool is free, needs no account, and keeps nothing but a count and your finished document, which deletes itself within two hours. There is a <a href="https://thekurultai.com/editions/sample-harbour-freight.html">complete sample document</a> if you would rather read one than make one, and a <a href="https://thekurultai.com/editions/">library of editions</a> reading real organizations from their own public filings and nothing else.</p>
+
+        <p><a href="https://thekurultai.com">thekurultai.com</a></p>
+
+    </article>
+
+    <section class="cta-section">
+        <h2>Let's talk about what your agents aren't telling you.</h2>
+        <div class="cta-links">
+            <a href="mailto:kathleen@prodigalparadigm.com" class="cta-link">Email</a>
+            <a href="https://linkedin.com/in/kathleen-bartin" target="_blank" class="cta-link">LinkedIn</a>
+            <a href="index.html" class="cta-link">Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Prodigal Paradigm LLC &bull; Millbrook, NY &bull; 2026</p>
+    </footer>
+
+</body>
+</html>
