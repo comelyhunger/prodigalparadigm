@@ -362,8 +362,10 @@
         }
         .work-card--photo .card-body { padding: 1.5rem 1.8rem 1.8rem; }
         .card-logo { display: block; width: 100%; max-width: 340px; height: auto; margin-top: 1.1rem; border-radius: 6px; }
-        .about-row { display: flex; gap: 2.6rem; align-items: flex-start; }
-        .about-photo { flex: 0 0 300px; width: 300px; height: auto; border-radius: 8px; }
+        .section--about { max-width: 1020px; }
+        .about-row { display: flex; gap: 3rem; align-items: flex-start; }
+        .about-photo { flex: 0 0 320px; width: 320px; height: auto; border-radius: 8px; }
+        .about-text p:first-child { margin-top: 0; }
         .about-text { flex: 1; min-width: 0; }
         @media (max-width: 700px) {
             .about-row { flex-direction: column; }
@@ -659,10 +661,10 @@
         <p class="hero-title">AI Adoption Strategist &bull; Prodigal Paradigm LLC</p>
     </section>
 
-    <section class="section">
+    <section class="section section--about">
         <h2 class="section-heading">What I Do</h2>
         <div class="about-row">
-            <img class="about-photo" src="images/kathleen-portrait.jpg" alt="Kathleen Bartin" width="720" height="900">
+            <img class="about-photo" src="images/kathleen-portrait.jpg" alt="Kathleen Bartin" width="760" height="1139">
             <div class="about-text">
                 <p>Organizations buy AI tools. Then they discover that buying the tool and actually deploying it are two entirely different problems. The vendor leaves. The team is uncertain. The technology sits.</p>
                 <p><strong>I close that gap.</strong> I run the people side of AI adoption - training, champions, governance, and the scaffolding that turns a brilliant but amnesiac inference engine into a reliable colleague. At a regulated life insurer, that meant more than three-quarters of the organization actively engaged in three months - opt-in, no mandate - and an ending by design: the client's own people took over the practice.</p>
